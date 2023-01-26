@@ -1,0 +1,49 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+void mean ()
+{
+    int n, i;
+    float arr[50], sum = 0, armean;
+    cout << "How many number, You want to enter ? ";
+    cin >> n;
+    cout << "\nEnter " << n << " Number: ";
+    for (i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        sum = sum + arr[i];
+    }
+    armean = sum / n;
+    cout << "\nSample Mean = " << armean;
+    cout << endl;
+}
+
+void variance()
+{
+    int n, i;
+    float arr[50], sum = 0, armean, result;
+    cout << "Enter sample mean: ";
+    cin >> armean;
+    cout << "How many number, You want to enter ? ";
+    cin >> n;
+    cout << "\nEnter " << n << " Number: ";
+    for (i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        sum = sum + pow(arr[i] - armean, 2);
+    }
+    result = sum / (n-1);
+    cout << "\nSample varience = " << result;
+    cout << endl;
+    cout << sqrt(result);
+}
+
+
+int main()
+{
+    mean();
+    variance();
+
+    return 0;
+}
