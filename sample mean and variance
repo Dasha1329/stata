@@ -39,6 +39,41 @@ void variance()
     cout << sqrt(result);
 }
 
+void difference(vector<double>& one, vector<double>& two)
+{
+    int n = 16;
+    vector<double> diff;
+    double cur;
+    double first;
+    double second;
+    cout << "Результат:" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        first = one[i];
+        second = two[i];
+        cur = first - second;
+        diff.push_back(cur);
+    }
+
+    cout << endl;
+    for (int i = 0; i < n; i++)
+        cout << diff[i] << " ";
+
+    cout << endl<< "Mean difference is:" << " ";
+    double sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += diff[i];
+    }
+    double res = sum / 16.0;
+    cout << res << endl;
+
+    double s = 0;
+    for (int i = 0; i < n; i++)
+        s += (diff[i] - res)*(diff[i] - res);
+    s = s/ 15.0;
+    cout << s;
+}
 
 int main()
 {
